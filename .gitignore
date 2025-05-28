@@ -1,0 +1,4 @@
+# Ignorar arquivos do power bi e cache
+*.pbix
+__pycache__/
+venv/
