@@ -54,7 +54,7 @@ Scripts automatizados para popular o banco
 
 📊 Visualização (Power BI + DAX)
 Dashboard interativo com KPIs estratégicos.
-Fórmulas DAX personalizadas para métricas complexas.
+Fórmulas DAX personalizadas para métricas.
 Design focado em clareza e insights acionáveis.
 
 ## 🔗 Links
