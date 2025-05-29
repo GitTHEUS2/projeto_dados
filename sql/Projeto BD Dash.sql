@@ -1,35 +1,30 @@
--- Cria o banco de dados 'vendas'
 CREATE DATABASE vendas;
 
--- Usa o banco de dados 'vendas'
 USE vendas;
 
--- Tabela Produtos
 CREATE TABLE produtos (
-    id_produto INT AUTO_INCREMENT PRIMARY KEY,  -- Chave primária
-    nome_produto VARCHAR(100) NOT NULL,        -- Nome do produto (não pode ser nulo)
-    categoria VARCHAR(50),                     -- Categoria do produto
-    preco DECIMAL(10, 2) NOT NULL              -- Preço do produto (não pode ser nulo)
+    id_produto INT AUTO_INCREMENT PRIMARY KEY,  
+    nome_produto VARCHAR(100) NOT NULL,        
+    categoria VARCHAR(50),                     
+    preco DECIMAL(10, 2) NOT NULL              
 );
 
--- Tabela Clientes
 CREATE TABLE clientes (
-    id_cliente INT AUTO_INCREMENT PRIMARY KEY,  -- Chave primária
-    nome_cliente VARCHAR(100) NOT NULL,        -- Nome do cliente (não pode ser nulo)
-    cidade VARCHAR(50),                        -- Cidade do cliente
-    estado VARCHAR(2)                          -- Estado do cliente (sigla de 2 caracteres)
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,  
+    nome_cliente VARCHAR(100) NOT NULL,        
+    cidade VARCHAR(50),                        
+    estado VARCHAR(2)                          
 );
 
--- Tabela Vendas
 CREATE TABLE vendas (
-    id_venda INT AUTO_INCREMENT PRIMARY KEY,   -- Chave primária
-    id_produto INT,                           -- Chave estrangeira para a tabela 'produtos'
-    id_cliente INT,                           -- Chave estrangeira para a tabela 'clientes'
-    data_venda DATE NOT NULL,                 -- Data da venda (não pode ser nula)
-    quantidade INT NOT NULL,                  -- Quantidade vendida (não pode ser nula)
-    valor_total DECIMAL(10, 2) NOT NULL,      -- Valor total da venda (não pode ser nulo)
-    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),  -- Chave estrangeira
-    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)   -- Chave estrangeira
+    id_venda INT AUTO_INCREMENT PRIMARY KEY,   
+    id_produto INT,                           
+    id_cliente INT,                           
+    data_venda DATE NOT NULL,                 
+    quantidade INT NOT NULL,                 
+    valor_total DECIMAL(10, 2) NOT NULL,      
+    FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),  
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)  
 );
 
 INSERT INTO produtos (nome_produto, categoria, preco)
